@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cachirula.MainPage">
+
+    <Grid>
+
+        <ScrollView>
+            <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+                <Image
+                x:Name="Imagen"
+                Source="images1.jpg"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a submarine number ten" />
+
+                <Label
+                Text="Hola Papito!"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+                <Label
+                Text="Welcome to Cachirula"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Picame para cambiar" />
+
+                <Button
+                x:Name="CounterBtn"
+                Text="Click me" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Fill" />
+
+                <Button
+                x:Name="ResetBtn"
+                Text="Resetear" 
+                IsVisible="False"
+                SemanticProperties.Hint="Reset the number of times you click"
+                Clicked="ResetClicked"
+                HorizontalOptions="Fill" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+        <Grid
+            x:Name="Capa"
+            IsVisible="False"
+            BackgroundColor="#CC000000"
+            Padding="30"
+            RowDefinitions="*,Auto"
+            RowSpacing="15">    
+            <Image x:Name="ImagenGrande" Source="imagesfinal.jpg" Aspect="AspectFit" />
+            <Button Grid.Row="1" Text="Cerrar" Clicked="CerrarCapa" />
+        </Grid>
+    </Grid>
+
+</ContentPage>
